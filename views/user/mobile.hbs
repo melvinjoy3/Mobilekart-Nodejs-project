@@ -1,0 +1,115 @@
+
+<section>
+    
+
+
+    <div class="w3-content w3-section" style="max-width:100%;">
+        <img class="mySlides" style="width:100%"
+            src="https://i.postimg.cc/TwYHwPxL/real-me.jpg">
+        <img class="mySlides" src="https://i.postimg.cc/VL9Wb8Nz/one-plus.jpg"
+            style="width:100%">
+        <img class="mySlides" src="https://i.postimg.cc/Jh7mZZCP/vivo.jpg"
+            style="width:100%">
+        <img class="mySlides" src="https://i.postimg.cc/2j9wDD56/samsung2.jpg"
+            style="width:100%">
+        <img class="mySlides" src="https://i.postimg.cc/jdVh5hz0/nokia.jpg"
+            style="width:100%">
+        <img class="mySlides" src="https://i.postimg.cc/br0Sd1hp/redmi.jpg"
+            style="width:100%">
+        <img class="mySlides" src="https://i.postimg.cc/Hs7PvxtH/poco.jpg"
+            style="width:100%">
+        <img class="mySlides" src="https://i.postimg.cc/1t3yD6wy/Iphone.jpg"
+            style="width:100%">
+
+
+     
+    </div>
+    {{!-- w3 --}}
+
+
+    <div class="container">
+        
+
+        <div class="container">
+
+            <div class="row">
+                {{#each mobile}}
+                <div class="col-md-3 mt-5">
+                    <div class="card" style="width: 15rem; height:26rem;">
+                        <img src="/product-images/{{this._id}}.jpg"
+                            style="height: 12rem;"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.Name}}</h5>
+                            <p class="card-text1">₹ {{this.Price}}.00 </p>
+                            <p class="card-text">{{this.Description}}</p>
+                            <button onclick="addToCart('{{this._id}}')"
+                                class="btn btn" style="background-color:
+                                #2874f0;
+                                color:white">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{!-- whatsapp --}}
+    <div class="whs">
+        <a href="https://api.whatsapp.com/send?phone=919746529803&amp;text=Hi"
+            class="float" target="_blank">
+            <img style="height: 5rem;width:4%;"
+                src="https://i.postimg.cc/wvH73t3c/whatsapp.png"></a>
+    </div>
+    {{!-- whatsapp --}}
+
+    <div class="slide mt-5">
+        <img style="height: 10rem;width:100%;"
+            src="https://i.postimg.cc/vZnVKTt4/Slices-Banners-Smartphone.jpg"
+            alt="">
+    </div>
+</section>
+
+<style>
+.card{
+    border: 1px;
+    border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0px 0px 5px 5px #dfdfdf;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+.slide{
+    border: 1px;
+    border-radius: 10px;
+  padding: 0px;
+  box-shadow: 0px 0px 5px 5px #dfdfdf;
+}
+.card-text1{
+    color: #5B9D4F;
+}
+.card-text{
+    color: #6f706f;
+}
+.card-title{
+   font-size: 20px; 
+   font-weight: bold;
+}
+
+</style>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>

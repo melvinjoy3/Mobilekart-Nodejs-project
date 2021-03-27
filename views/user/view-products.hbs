@@ -1,0 +1,279 @@
+
+<section>
+    <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.callout {
+  position: fixed;
+  bottom: 35px;
+  right: 20px;
+  margin-left: 20px;
+  max-width: 300px;
+}
+x
+.callout-header {
+  padding: 25px 15px;
+  background: #555;
+  font-size: 30px;
+  color: white;
+}
+
+.callout-container {
+  padding: 15px;
+  background-color: #ccc;
+  color: black
+}
+
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: lightgrey;
+}
+</style>
+
+{{!-- side bar --}}
+<style>
+body {
+  margin-top: 10px;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: ;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color:#2874f0;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+{{!-- social meida start --}}
+<style>
+body {margin:0;height:2000px;}
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+
+.whatsapp {
+  background: green;
+  color: white;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+</style>
+{{!-- social media end --}}
+
+
+    <div class="w3-content w3-section" style="max-width:100%;">
+        <img class="mySlides" style="width:100%"
+            src="https://i.postimg.cc/TwYHwPxL/real-me.jpg">
+        <img class="mySlides" src="https://i.postimg.cc/VL9Wb8Nz/one-plus.jpg"
+            style="width:100%">
+        <img class="mySlides" src="https://i.postimg.cc/Jh7mZZCP/vivo.jpg"
+            style="width:100%">
+        <img class="mySlides" src="https://i.postimg.cc/2j9wDD56/samsung2.jpg"
+            style="width:100%">
+        <img class="mySlides" src="https://i.postimg.cc/jdVh5hz0/nokia.jpg"
+            style="width:100%">
+        <img class="mySlides" src="https://i.postimg.cc/br0Sd1hp/redmi.jpg"
+            style="width:100%">
+        <img class="mySlides" src="https://i.postimg.cc/Hs7PvxtH/poco.jpg"
+            style="width:100%">
+        <img class="mySlides" src="https://i.postimg.cc/1t3yD6wy/Iphone.jpg"
+            style="width:100%">
+
+
+    </div>
+    {{!-- w3 --}}
+    <div class="sidebar">
+  <a class="active" href="/">Home</a>
+  <a href="/contact">Contact</a>
+  <a href="/about-us">About</a>
+</div>
+
+{{!-- social media   --}}
+<div class="icon-bar">
+  {{!-- <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+  <a href="#" class="google"><i class="fa fa-google"></i></a> 
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> --}}
+  <a href="https://api.whatsapp.com/send?phone=913333333333&amp;text=Hi" class="whatsapp"><i class="fa fa-whatsapp"></i></a> 
+</div>
+{{!-- social media end --}}
+
+
+
+
+
+    <div class="container">
+        
+
+        <div class="container">
+
+            <div class="row">
+                {{#each products}}
+                <div class="col-md-3 mt-5">
+                    <div class="card" style="width: 15rem; height:26rem;">
+                        <a href="/#individual" style="text-decoration:none;">
+                        <img src="/product-images/{{this._id}}.jpg"
+                            style="height: 12rem;"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.Name}}</h5>
+                            <p class="card-text1">₹ {{this.Price}}.00 </p>
+                            </a>
+                            <p class="card-text">{{this.Description}}</p> 
+                            <button onclick="addToCart('{{this._id}}')"
+                                class="btn btn" style="background-color:
+                                #2874f0;
+                                color:white">Add to Cart</button>
+                                
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{!-- whatsapp --}}
+    {{!-- <div class="whs">
+        <a href="https://api.whatsapp.com/send?phone=919746529803&amp;text=Hi"
+            class="float" target="_blank">
+            <img style="height: 5rem;width:4%;"
+                src="https://i.postimg.cc/wvH73t3c/whatsapp.png"></a>
+    </div> --}}
+    {{!-- whatsapp --}}
+
+    <div class="slide mt-5">
+        <img style="height: 10rem;width:100%;"
+            src="https://i.postimg.cc/vZnVKTt4/Slices-Banners-Smartphone.jpg"
+            alt="">
+    </div>
+
+   
+
+
+<div class="callout">
+  <div class="callout-header">MobileKart</div>
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+  <div class="callout-container">
+    <p>Welcome to Our Family, Hope you enjoy your Day <a href="/about-us">Learn more</a> or close it if it is in your way.</p>
+  </div>
+</div>
+
+</section>
+
+<style>
+.card{
+    border: 1px;
+    border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0px 0px 5px 5px #dfdfdf;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+.slide{
+    border: 1px;
+    border-radius: 10px;
+  padding: 0px;
+  box-shadow: 0px 0px 5px 5px #dfdfdf;
+}
+.card-text1{
+    color: #5B9D4F;
+}
+.card-text{
+    color: #6f706f;
+}
+.card-title{
+   font-size: 20px; 
+   font-weight: bold;
+}
+
+</style>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>

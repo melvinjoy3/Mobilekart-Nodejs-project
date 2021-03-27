@@ -1,0 +1,47 @@
+<section>
+    <div class="container">
+
+        <table class="table mt-5" id="orderstable">
+            <thead class="thead" style="background-color: #5B9D4F; color:white">
+                <tr>
+
+                    <th scope="col">User ID</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Payment Method</th>
+                    {{!-- <th scope="col">Products</th> --}}
+                    <th scope="col">Total Amount</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Date</th>
+                    {{!-- <th scope="col">Options</th> --}}
+
+                </tr>
+            </thead>
+            <tbody>
+                {{#each orders}}
+                <tr>
+
+                    <td>{{this.userId}}</td>
+                    <td>{{this.deliveryDetails.address}}</td>
+                    
+                    <td>{{this.paymentMethod}}</td>
+                    {{!-- <td>{{this.products}}</td> --}}
+                    <td>{{this.totalAmount}}</td>
+                    <td>{{this.status}}</td>
+                    <td>{{this.date}}</td>
+                    {{!-- <td style='text-align:center;vertical-align:middle'>
+                       
+                        <a href="/admin/delete-order/{{this._id}}" class="btn btn-danger" onclick="return confirm('Are you want to delete this user {{this.userId}} ?')">Delete</a>
+                    </td> --}}
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+<script>
+  $(function () {
+    $('#orderstable').DataTable();
+  });
+</script>

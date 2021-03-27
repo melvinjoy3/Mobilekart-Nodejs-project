@@ -1,0 +1,126 @@
+<header >
+    {{!-- <div class="header" id="myHeader">
+
+    
+    <div class="p-0 mb-0  text-white" style="background-color:#fffff;">
+        
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <small style="color: black;">dreamerui.yahoo.com</small>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                
+            <li class="nav-item ml-3">
+                <a href="" class="nav-links" style="color: white;"><small>About Us</small></a>
+            </li>
+            
+            <li class="nav-item ml-3">
+                <a href="" class="nav-links" style="color: white;"><small>Contact Us</small></a>
+            </li>
+        </ul>
+        </nav>
+        
+    </div> --}}
+    <nav class=" navbar navbar-expand-lg navbar-light " style="background-color:#2874f0; ">
+        
+        <a class="navbar-brand" href="/" style="color:white"><img style="height: 3rem; width:3rem;" 
+       src="https://icons.iconarchive.com/icons/pelfusion/long-shadow-media/512/Mobile-Smartphone-icon.png"
+                            alt="">mobilekart</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+           <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/mobile" style="color:white">Mobiles <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="/accessories" style="color: white">Accessories </a>
+                </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="/mobile-parts" style="color:white">Mobile Parts </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/message-box" style="color:white">FeedBack </a>
+                </li>
+                            
+
+                            {{!-- <li class="nav-item">
+                                <a class="nav-link" href="#" style="color:
+                                    white">Services
+                                </a>
+                            </li> --}}
+                            
+                        </ul>
+
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link float-right" href="/cart" style="color:white">Cart<span class="badge badge-success" id="cart-count">{{cartCount}}</span></a>
+                </li>
+
+                {{#if user}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/orders" style="color:white">Orders</a>
+                </li>
+                {{/if}}
+
+
+            </ul>
+            <div class="dropdown">
+                <button class="btn btn dropdown-toggle ml-auto" style="background-color:#ffe500; color:#2874f0;" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{#if user}}
+                        {{user.Name}}
+                        {{else}}
+                            Account
+                    {{/if}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {{#if user}}
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                        {{else}}
+                            <a class="dropdown-item" href="/login">Login</a>
+
+                    {{/if}}
+                    
+                </div>
+            </div>
+            
+
+        </div>
+    </nav>
+    </div>
+</header>
+
+
+
+<style>
+    .nav-link{
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .nav-links{
+       font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        font-weight: normal; 
+    }
+    .header{
+        border: 1px;
+        border-radius: 10px;
+  padding: 0px;
+  box-shadow: 0px 0px 5px 5px #dfdfdf;
+  
+    }
+    
+   
+
+</style>
+
+

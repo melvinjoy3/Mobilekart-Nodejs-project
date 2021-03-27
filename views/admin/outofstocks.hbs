@@ -1,0 +1,32 @@
+<section>
+<div class="row ">
+    
+                 {{#if (typeof(outofstocks) !='undefined' && outofstocks.length!="0" ) }}
+                    {{outofstocks.forEach(function(outofstock)}}
+                   
+                        <div class="card" style="width: 18rem;">
+                            <img src='/uploads/<%=outofstock.image %>' style="width: 50%"
+                                class="card-img-top mx-auto d-block img-fluid" alt="image">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    {{outofstock.productname}}
+                                </h5>
+                                <form action="/admin/updatequantity/<%=outofstock._id%>" method="post">
+                                    <div class="mb-3">
+                                        <label for="quantity" class="form-label">Quantity</label>
+                                        <input type="number" class="form-control" id="quantity" name="quantity"
+                                            value="{{outofstock.quantity}}" placeholder="Quantity" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input class="btn btn-primary" type="submit" value="Update Quantity">
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                        
+                            {{else}}
+                                <h1>There is no products</h1>
+                              {{/if}}
+            </div>
+    </section>        

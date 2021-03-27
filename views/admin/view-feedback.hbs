@@ -1,0 +1,43 @@
+<section>
+    <div class="container">
+
+        <table class="table mt-5" id="orderstable">
+            <thead class="thead" style="background-color: #5B9D4F; color:white">
+                <tr>
+
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">FeedBack</th>
+                     <th scope="col">Option</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+                {{#each feed}}
+                <tr>
+
+                    <td>{{this.firstname}}</td>
+                    <td>{{this.lastname}}</td>
+                    <td>{{this.email}}</td>
+                    
+                    <td>{{this.subject}}</td>
+                    
+                     <td style='text-align:center;vertical-align:middle'>
+                       
+                      <a href="/admin/delete-feedback/{{this._id}}" class="btn btn-danger" onclick="return confirm('Are you want to delete this user {{this.firstname}} ?')">Delete</a>
+                    </td> 
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+<script>
+  $(function () {
+    $('#orderstable').DataTable();
+  });
+</script>
